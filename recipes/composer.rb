@@ -6,6 +6,7 @@
 #
 
 include_recipe "composer"
+include_recipe "pdepend::composer"
 
 phpmd_dir = "#{Chef::Config[:file_cache_path]}/phpmd"
 

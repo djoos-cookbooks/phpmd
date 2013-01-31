@@ -6,24 +6,21 @@
 #
 
 include_recipe "php"
+include_recipe "pdepend::pear"
 
 #PHP Extension and Application Repository PEAR channel
-php_pear_channel "pear.php.net" do
+pearhub_chan = php_pear_channel "pear.php.net" do
   action :update
 end
 
 #upgrade PEAR
 php_pear "PEAR" do
+	channel pearhub_chan.channel_name
 	action :upgrade
 end
 
 #phpmd PEAR channel
 pearhub_chan = php_pear_channel "pear.phpmd.org" do
-	action :discover
-end
-
-#pdepend PEAR channel
-php_pear_channel "pear.pdepend.org" do
 	action :discover
 end
 
