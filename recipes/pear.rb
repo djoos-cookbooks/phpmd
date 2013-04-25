@@ -15,20 +15,20 @@ end
 
 #upgrade PEAR
 php_pear "PEAR" do
-	channel pearhub_chan.channel_name
-	action :upgrade
+    channel pearhub_chan.channel_name
+    action :upgrade
 end
 
 #phpmd PEAR channel
 pearhub_chan = php_pear_channel "pear.phpmd.org" do
-	action :discover
+    action :discover
 end
 
 #upgrade phpmd
 php_pear "PHP_PMD" do
-	channel pearhub_chan.channel_name
-	if node[:phpmd][:version] != "latest"
-		version "#{node[:phpmd][:version]}"
-	end
-	action :upgrade
+    channel pearhub_chan.channel_name
+    if node[:phpmd][:version] != "latest"
+        version "#{node[:phpmd][:version]}"
+    end
+    action :upgrade
 end

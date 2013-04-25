@@ -7,6 +7,3 @@
 
 default[:phpmd][:install_method] = "pear"
 default[:phpmd][:version] = "latest"
-
-#composer install only
-default[:phpmd][:prefix] = "/usr/bin"

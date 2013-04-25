@@ -28,7 +28,7 @@ Requirements
 Attributes
 ==========
 
-* `node['phpmd']['install_method']` - Installation method, "pear" or "composer", defaults to "pear"
+* `node['phpmd']['install_method']` - Installation method, "pear", "composer" or "phar" defaults to "pear"
 * `node['phpmd']['version']` - The phpmd version that will be installed, defaults to "latest"
 * `node['phpmd']['prefix']` - The composer.json bin-dir, defaults to "/usr/bin" (composer install method only)
 
@@ -37,9 +37,9 @@ Usage
 
 1) include `recipe[phpmd]` in a run list
 2)
-	change the attributes
-	--- OR ---
-	override the attribute on a higher level (http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
+    change the attributes
+    --- OR ---
+    override the attribute on a higher level (http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
 
 References
 ==========
