@@ -30,5 +30,5 @@ php_pear "PHP_PMD" do
     if node[:phpmd][:version] != "latest"
         version "#{node[:phpmd][:version]}"
     end
-    action :upgrade
+    action :upgrade if node[:phpmd][:version] == "latest"
 end
