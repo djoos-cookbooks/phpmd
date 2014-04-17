@@ -24,11 +24,14 @@ pearhub_chan = php_pear_channel "pear.phpmd.org" do
     action :discover
 end
 
-#upgrade phpmd
-php_pear "PHP_PMD" do
+#install/upgrade phpmd
+package = "PHP_PMD"
+
+php_pear package do
     channel pearhub_chan.channel_name
     if node[:phpmd][:version] != "latest"
         version "#{node[:phpmd][:version]}"
     end
-    action :upgrade if node[:phpmd][:version] == "latest"
+    #upgrade when package is installed and latest version is required
+    action ( !(`pear list | grep #{package}`.empty?) and node[:phpmd][:version] == "latest" ) ? :upgrade : :install
 end
