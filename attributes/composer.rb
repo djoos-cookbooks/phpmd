@@ -5,4 +5,4 @@
 # Copyright (c) 2016, David Joos
 #
 
-default['phpmd']['install_dir'] = '/usr/local/phploc'
+default['phpmd']['install_dir'] = '/usr/local/phpmd'
