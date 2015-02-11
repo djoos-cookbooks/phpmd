@@ -8,7 +8,7 @@
 include_recipe 'composer'
 include_recipe 'pdepend::composer'
 
-phpmd_dir = "#{Chef::Config[:file_cache_path]}/phpmd"
+phpmd_dir = node['phpmd']['install_dir']
 
 directory phpmd_dir do
   owner 'root'
@@ -32,7 +32,7 @@ template "#{phpmd_dir}/composer.json" do
   mode 0600
   variables(
     :version => version,
-    :bindir => node['phpmd']['prefix']
+    :bindir => node['phpmd']['bin_dir']
   )
 end
 

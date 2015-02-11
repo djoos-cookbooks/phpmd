@@ -7,3 +7,4 @@
 
 default['phpmd']['install_method'] = 'composer'
 default['phpmd']['version'] = 'latest'
+default['phpmd']['bin_dir'] = '/usr/bin'
