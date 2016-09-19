@@ -2,7 +2,7 @@
 # Cookbook Name:: phpmd
 # Recipe:: pear
 #
-# Copyright 2013-2014, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 include_recipe 'php'
@@ -28,11 +28,11 @@ end
 package = 'PHP_PMD'
 
 # upgrade when package is installed and latest version is required
-if !(`pear list | grep #{package}`.empty?) && node['phpmd']['version'] == 'latest'
-  action = :upgrade
-else
-  action = :install
-end
+action = if !`pear list | grep #{package}`.empty? && node['phpmd']['version'] == 'latest'
+           :upgrade
+         else
+           :install
+         end
 
 php_pear package do
   channel pearhub_chan.channel_name

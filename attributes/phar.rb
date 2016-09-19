@@ -2,7 +2,7 @@
 # Cookbook Name:: phpmd
 # Attributes:: phar
 #
-# Copyright 2013-2014, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 default['phpmd']['phar_url'] = 'http://static.phpmd.org/php/latest/phpmd.phar'
