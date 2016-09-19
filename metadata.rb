@@ -10,6 +10,9 @@ version '0.0.6'
   supports os
 end
 
+source_url 'https://github.com/djoos-cookbooks/phpmd' if respond_to?(:source_url)
+issues_url 'https://github.com/djoos-cookbooks/phpmd/issues' if respond_to?(:issues_url)
+
 depends 'php'
 depends 'composer'
 depends 'pdepend'
