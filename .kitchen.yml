@@ -1,28 +1,29 @@
 ---
-driver_plugin: vagrant
-driver_config:
-  require_chef_omnibus: true
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
 
 platforms:
   - name: ubuntu-14.04
+    run_list:
+      - recipe[apt]
 
 suites:
-  - name: default
-    run_list:
-      - recipe[phpmd::default]
-  - name: pear
+  - name: default_pear
     run_list:
       - recipe[phpmd::default]
     attributes:
       pdepend:
         install_method: pear
-  - name: composer
+  - name: default_composer
     run_list:
       - recipe[phpmd::default]
     attributes:
       pdepend:
         install_method: composer
-  - name: phar
+  - name: default_phar
     run_list:
       - recipe[phpmd::default]
     attributes:

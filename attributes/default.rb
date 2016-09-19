@@ -2,7 +2,7 @@
 # Cookbook Name:: phpmd
 # Attributes:: default
 #
-# Copyright 2013-2014, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 default['phpmd']['install_method'] = 'composer'

@@ -1,23 +1,23 @@
-[![Build Status](https://secure.travis-ci.org/escapestudios-cookbooks/phpmd.png)](http://travis-ci.org/escapestudios-cookbooks/phpmd)
+[![Build Status](https://travis-ci.org/djoos-cookbooks/phpmd.png)](http://travis-ci.org/djoos-cookbooks/phpmd)
 
-Description
-===========
+# phpmd cookcook
+
+## Description
 
 This cookbook provides an easy way to install phpmd, PHP Mess Detector.
 
 More information?
 http://phpmd.org/download/index.html
 
-Requirements
-============
+## Requirements
 
-## Cookbooks:
+### Cookbooks:
 
 * php
 * composer
 * pdepend
 
-## Platforms:
+### Platforms:
 
 * Ubuntu
 * Debian
@@ -27,33 +27,31 @@ Requirements
 * Scientific
 * Amazon
 
-Attributes
-==========
+## Attributes
 
 * `node['phpmd']['install_method']` - Installation method, "pear", "composer" or "phar" defaults to "pear"
 * `node['phpmd']['version']` - The phpmd version that will be installed, defaults to "latest"
 * `node['phpmd']['prefix']` - The composer.json bin-dir, defaults to "/usr/bin" (composer install method only)
 
-Usage
-=====
+## Usage
 
 1) include `recipe[phpmd]` in a run list
-2)
-    change the attributes
-    --- OR ---
-    override the attribute on a higher level (http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
+2) change the attributes
+--- OR ---
+[override the attribute on a higher level](http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
 
-References
-==========
+## References
 
 * [phpmd home page] (http://phpmd.org/download/index.html)
 
-License and Authors
-===================
+## License and Authors
+
+Author: David Joos <development@davidjoos.com>
+Copyright: 2016, David Joos
 
 Author: David Joos <david.joos@escapestudios.com>
 Author: Escape Studios Development <dev@escapestudios.com>
-Copyright: 2013-2014, Escape Studios
+Copyright: 2013-2015, Escape Studios
 
 Unless otherwise noted, all files are released under the MIT license,
 possible exceptions will contain licensing information in them.
