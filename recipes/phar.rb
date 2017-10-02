@@ -5,9 +5,10 @@
 # Copyright (c) 2016, David Joos
 #
 
+include_recipe 'php'
 include_recipe 'pdepend::phar'
 
-remote_file "#{node['phpmd']['install_dir']}/phpmd" do
+remote_file "#{node['phpmd']['bin_dir']}/phpmd" do
   source node['phpmd']['phar_url']
   mode 0755
 end

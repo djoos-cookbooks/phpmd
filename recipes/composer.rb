@@ -6,16 +6,8 @@
 #
 
 include_recipe 'composer'
-include_recipe 'pdepend::composer'
 
-phpmd_dir = "#{Chef::Config[:file_cache_path]}/phpmd"
-
-directory phpmd_dir do
-  owner 'root'
-  group 'root'
-  mode 0755
-  action :create
-end
+install_dir = node['phpmd']['install_dir']
 
 # figure out what version to install
 version = if node['phpmd']['version'] != 'latest'
@@ -24,22 +16,8 @@ version = if node['phpmd']['version'] != 'latest'
             '*.*.*'
           end
 
-# composer.json
-template "#{phpmd_dir}/composer.json" do
-  source 'composer.json.erb'
-  owner 'root'
-  group 'root'
-  mode 0600
-  variables(
-    :version => version,
-    :bindir => node['phpmd']['prefix']
-  )
-end
-
-# composer update
-execute 'phpmd-composer' do
-  user 'root'
-  cwd phpmd_dir
-  command 'composer update'
-  action :run
+composer_install_global 'phpmd/phpmd' do
+  install_dir install_dir
+  version version
+  bin_dir node['phpmd']['prefix']
 end
