@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: phpmd
+# Cookbook:: phpmd
 # Recipe:: pear
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 include_recipe 'php'

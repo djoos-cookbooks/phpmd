@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: phpmd
+# Cookbook:: phpmd
 # Recipe:: default
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 case node['phpmd']['install_method']

@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: phpmd
+# Cookbook:: phpmd
 # Attributes:: default
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 default['phpmd']['install_method'] = 'composer'

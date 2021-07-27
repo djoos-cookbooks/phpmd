@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: phpmd
+# Cookbook:: phpmd
 # Attributes:: phar
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 default['phpmd']['phar_url'] = 'http://static.phpmd.org/php/latest/phpmd.phar'
